@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = FALSE)
       + The source code for the project can be found in github public repository
       +  https://github.com/b-mc-g/developing_data_products_w4/tree/master
       + Presentation data can be found using gh.pages link in browser here
-      + 
+      + http://b-mc-g.github.io/developing_data_products_w4/index.html
       
 ## Application
 * The application uses the "iris" data preloaded with R
