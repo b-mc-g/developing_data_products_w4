@@ -1,0 +1,8 @@
+# Developing Data Products Week 4
+Project Repository for final project Presentation
+
+Source Files can be found here
+https://github.com/b-mc-g/developing_data_products_w4/tree/master
+
+Presentation can be found using a browser  (link to gh-pages index.html file)  here
+http://b-mc-g.github.io/developing_data_products_w4/indey.html
