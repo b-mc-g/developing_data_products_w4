@@ -1,0 +1,70 @@
+---
+title: "Developing Data Products - Slide Pitch"
+author: "b m g"
+date: "6/26/2017"
+transition: rotate
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Objectives
+
+* Build a shiny application with documentation 
+      + showing use of user input widgets and 
+      + calculations on server side based on user input values 
+* Host the application on a shiny server 
+* Publish a set of 5 slides to pitch the applciation
+* The data set "iris" from R is used. See references.
+      + The source code for the project can be found in github public repository
+      +  https://github.com/b-mc-g/developing_data_products_w4/tree/master
+      + Presentation data can be found using gh.pages link in browser here
+      + 
+      
+## Application
+* The application uses the "iris" data preloaded with R
+* On right of the screen
+      + Petal and Sepal width and length are plotted on 4 graphs
+* On left of screen
+      + Four sliders allow the values to be set
+      + These could be used to enter actual measurement
+* Bottom Left there is a Predict Species button
+      + This allows the set slider values to be entered
+      + into a random forest model geberated using the "iris" data
+      + the predicted species is returned and show in table form to the user
+      + values are shown as decimals that add up to 1
+
+
+## Example Graph used in the application
+
+```{r, echo = FALSE, message=FALSE}
+library(ggplot2)
+data("iris")
+```
+* Sepal Length probalilty densities for the 3 Species
+* The app allows the user to set measurement values using  sliders
+```{r, echo = FALSE}
+ggplot(iris, aes(x = Sepal.Length,
+                 group = Species,
+                 fill = as.factor(Species))) + 
+      geom_density(position = "identity", alpha = 0.5) +
+      scale_fill_discrete(name = "Species") +
+      theme_bw() +
+      xlab("Sepal Length") +
+      geom_vline(xintercept = 7,
+                 color = "blue",
+                 size = 1.5) +
+      scale_x_continuous(limits = c(round(min(iris$Sepal.Length) / 2, 1),
+                                    round(max(iris$Sepal.Length) * 1.25, 1)))
+```
+
+## Additional References
+
+- https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/iris.html
+- https://shiny.rstudio.com/tutorial/
+- https://shiny.rstudio.com/articles/
+- https://shiny.rstudio.com/gallery/
+
+
