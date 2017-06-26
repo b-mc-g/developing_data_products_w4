@@ -9,6 +9,8 @@ library(shiny)
 library(randomForest)
 library(caret)
 library(ggplot2)
+library(dplyr)
+library(e1071)
 
 # Create Random Forest Model
 
